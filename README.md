@@ -1,1 +1,1 @@
-# Clerk Authentication With Express.JS & Next.JS!
+# Clerk Authentication In Express.JS & Next.JS!
