@@ -1,1 +1,1 @@
-# Next-Supabase-And-Strapi!
+# Next.JS With Supabase And Strapi CMS!
