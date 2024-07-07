@@ -1,4 +1,7 @@
+import { ReactNode } from "react";
 import { ThemeProvider } from "@/Components/ThemeProvider";
+import ModalProvider from "@/Components/ModalProvider";
+import Navbar from "@/Components/Navbar";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -13,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -24,7 +27,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <ModalProvider>
+            <Navbar />
+            {children}
+          </ModalProvider>
         </ThemeProvider>
       </body>
     </html>
