@@ -1,8 +1,7 @@
+import Charts from "@/Components/Charts";
+
 const Dashboard = () => {
-    return (
-        <div>
-        </div>
-    )
+    return <Charts />
 };
 
 export default Dashboard;
