@@ -33,23 +33,23 @@ const LoginForm = () => {
                                     type="email"
                                 />
 
-                                {/* {state?.errors?.email && (
+                                {state?.errors?.email && (
                                     <p className="text-sm text-red-500">{state.errors.email}</p>
-                                )} */}
+                                )}
                             </div>
 
                             <div className="mt-4">
                                 <Label htmlFor="password">Password</Label>
                                 <Input id="password" type="password" name="password" />
 
-                                {/* {state?.errors?.password && (
+                                {state?.errors?.password && (
                                     <p className="text-sm text-red-500">{state.errors.password}</p>
-                                )} */}
+                                )}
                             </div>
 
-                            {/* {state?.message && (
+                            {state?.message && (
                                 <p className="text-sm text-red-500">{state.message}</p>
-                            )} */}
+                            )}
                             <LoginButton />
                         </div>
                     </form>

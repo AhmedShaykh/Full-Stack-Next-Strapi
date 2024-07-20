@@ -2,6 +2,7 @@ import { SessionPayload } from "./schema";
 import { SignJWT, jwtVerify } from "jose";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import { db } from "./db";
 
 const secretKey = process.env.SECRET;
 
@@ -39,7 +40,16 @@ export async function createSession(userId: string) {
 
     const expiresAt = new Date(Date.now() + 60 * 60 * 1000);
 
-    const session = await encrypt({ userId, expiresAt });
+    const data = await db.session.create({
+        data: {
+            userId,
+            expiresAt,
+        },
+    });
+
+    const sessionId = data.id;
+
+    const session = await encrypt({ userId: sessionId, expiresAt });
 
     cookies().set("session", session, {
         httpOnly: true,

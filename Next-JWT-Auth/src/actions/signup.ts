@@ -41,7 +41,7 @@ export async function signup(
         }
     });
 
-    const user = data[0];
+    const user = data;
 
     if (!user) {
         return {

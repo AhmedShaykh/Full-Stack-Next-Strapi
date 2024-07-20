@@ -14,7 +14,9 @@ const SignUpForm = () => {
         <div className="grid place-items-center h-screen">
             <div className="flex flex-col p-4 w-1/3">
                 <div className="text-center">
-                    <h1 className="text-3xl font-bold">Create an account</h1>
+                    <h1 className="text-3xl font-bold">
+                        Create an account
+                    </h1>
 
                     <p className="text-gray-500 mt-2">
                         Enter your information to get started
@@ -29,34 +31,35 @@ const SignUpForm = () => {
                                 <Input id="name" name="name" placeholder="John Doe" />
                             </div>
 
-                            {/* {state?.errors?.name && (
-                            <p className="text-sm text-red-500">{state.errors.name}</p>
-                        )} */}
+                            {state?.errors?.name && (
+                                <p className="text-sm text-red-500">{state.errors.name}</p>
+                            )}
 
                             <div>
                                 <Label htmlFor="email">Email</Label>
                                 <Input id="email" name="email" placeholder="john@example.com" />
                             </div>
 
-                            {/* {state?.errors?.email && (
-                            <p className="text-sm text-red-500">{state.errors.email}</p>
-                        )} */}
+                            {state?.errors?.email && (
+                                <p className="text-sm text-red-500">{state.errors.email}</p>
+                            )}
 
                             <div>
                                 <Label htmlFor="password">Password</Label>
                                 <Input id="password" name="password" type="password" />
                             </div>
 
-                            {/* {state?.errors?.password && (
-                            <div className="text-sm text-red-500">
-                                <p>Password must:</p>
-                                <ul>
-                                    {state.errors.password.map((error) => (
-                                        <li key={error}>- {error}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )} */}
+                            {state?.errors?.password && (
+                                <div className="text-sm text-red-500">
+                                    <p>Password must:</p>
+
+                                    <ul>
+                                        {state.errors.password.map((error) => (
+                                            <li key={error}>- {error}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
 
                             <SignupButton />
                         </div>

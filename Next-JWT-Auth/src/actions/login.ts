@@ -39,7 +39,7 @@ export async function login(
         return errorMessage;
     }
 
-    const userId = user.id.toString();
+    const userId = user.id;
 
     await createSession(userId);
 
