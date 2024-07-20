@@ -3,6 +3,7 @@ import { FormState, SignupFormSchema } from "@/lib/schema";
 import { createSession } from "@/lib/session";
 import { db } from "@/lib/db";
 import bcrypt from "bcrypt";
+import { redirect } from "next/navigation";
 
 export async function signup(
     state: FormState,
@@ -49,8 +50,6 @@ export async function signup(
         };
     }
 
-    const userId = user.id.toString();
-
-    await createSession(userId);
+    redirect("/login");
 
 };

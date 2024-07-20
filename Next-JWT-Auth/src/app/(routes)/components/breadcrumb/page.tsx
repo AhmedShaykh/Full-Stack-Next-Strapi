@@ -15,9 +15,9 @@ const BreadCrumbPage = () => {
                     <BreadcrumbItem>
                         <BreadcrumbLink
                             className="text-lg font-semibold hover:text-blue-600"
-                            href="/"
+                            href="/dashboard"
                         >
-                            Home
+                            Dashboard...
                         </BreadcrumbLink>
                     </BreadcrumbItem>
 

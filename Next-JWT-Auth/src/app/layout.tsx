@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Next.JS JWT Authentication",
-  description: "Next.JS UseActionState Hooks & Cookies Authentication"
+  description: "Next.JS JWT Authentication"
 };
 
 export default function RootLayout({
