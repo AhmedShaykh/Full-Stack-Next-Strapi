@@ -28,7 +28,7 @@ const SignUpForm = () => {
 
     return (
         <div className="w-full max-w-md">
-            <form>
+            <form action={formAction}>
                 <Card>
                     <CardHeader className="space-y-1">
                         <CardTitle className="text-3xl font-bold">Sign Up</CardTitle>
