@@ -1,4 +1,7 @@
 import { ThemeProvider } from "@/Components/ThemeProvider";
+import { getGlobalPageData } from "@/data";
+import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -10,11 +13,14 @@ export const metadata: Metadata = {
   description: "Full Stack Next.JS Strapi",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const globalData = await getGlobalPageData();
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -24,7 +30,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar data={globalData.header} />
           {children}
+          <Footer data={globalData.footer} />
         </ThemeProvider>
       </body>
     </html>

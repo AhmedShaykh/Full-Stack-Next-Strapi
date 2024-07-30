@@ -1,4 +1,6 @@
 import { FC } from "react";
+import StrapiImage from "./StrapiImage";
+import { Button } from "./ui/button";
 import Link from "next/link";
 
 interface ImageProps {
@@ -32,15 +34,11 @@ const HeroSection: FC<HeroSectionProps> = ({ data }) => {
 
     return (
         <div className="relative h-[600px] overflow-hidden">
-            <img
-                className="absolute inset-0 object-cover w-full h-full"
+            <StrapiImage
                 alt="Background"
-                height={1080}
+                className="absolute inset-0 object-cover w-full h-full"
+                height={1000}
                 src={imageURL}
-                style={{
-                    aspectRatio: "1920/1080",
-                    objectFit: "cover",
-                }}
                 width={1920}
             />
 
@@ -54,10 +52,12 @@ const HeroSection: FC<HeroSectionProps> = ({ data }) => {
                 </p>
 
                 <Link
-                    className="mt-8 inline-flex items-center justify-center px-6 py-3 text-base font-medium text-black bg-white rounded-md shadow hover:bg-gray-100"
+                    className="mt-8"
                     href={link.url}
                 >
-                    {link.text}
+                    <Button size="lg" className="font-semibold">
+                        {link.text}
+                    </Button>
                 </Link>
             </div>
         </div>
