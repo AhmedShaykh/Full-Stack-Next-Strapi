@@ -3,7 +3,7 @@ import { getAuthToken } from "./token";
 import qs from "qs";
 
 const query = qs.stringify({
-    populate: { image: { fields: ["url", "alternativeText"] } }
+    populate: { image: { fields: ["url", "alternativeText"] } },
 });
 
 export async function getUser() {
@@ -33,9 +33,9 @@ export async function getUser() {
 
         if (data.error) return { ok: false, data: null, error: data.error };
 
-    } catch (error) {
+        return { ok: true, data: data, error: null };
 
-        console.log(error);
+    } catch (error) {
 
         return { ok: false, data: null, error: error };
 

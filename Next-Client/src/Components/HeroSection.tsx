@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { getUser } from "@/services/user";
 import StrapiImage from "./StrapiImage";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -26,9 +27,13 @@ interface HeroSectionProps {
     };
 };
 
-const HeroSection: FC<HeroSectionProps> = ({ data }) => {
+const HeroSection: FC<HeroSectionProps> = async ({ data }) => {
 
     const { heading, subHeading, image, link } = data;
+
+    const user = await getUser();
+
+    const linkUrl = user.ok ? "/dashboard" : link.url;
 
     const imageURL = "http://localhost:8080" + image.url;
 
@@ -53,10 +58,10 @@ const HeroSection: FC<HeroSectionProps> = ({ data }) => {
 
                 <Link
                     className="mt-8"
-                    href={link.url}
+                    href={linkUrl}
                 >
                     <Button size="lg" className="font-semibold">
-                        {link.text}
+                        {user.ok ? "Dashboard" : link.text}
                     </Button>
                 </Link>
             </div>
