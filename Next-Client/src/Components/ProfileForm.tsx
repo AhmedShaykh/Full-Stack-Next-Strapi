@@ -25,7 +25,7 @@ const INITIAL_STATE = {
 
 function CountBox({ text }: { readonly text: number }) {
 
-    const style = "font-bold text-md ml-1";
+    const style = "font-bold text-md mx-1";
 
     const color = text > 0 ? "text-primary" : "text-red-500";
 
