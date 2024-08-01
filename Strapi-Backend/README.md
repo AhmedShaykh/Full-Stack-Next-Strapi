@@ -1,1 +1,0 @@
-# Next.JS Strapi Back-End!

@@ -1,1 +1,1 @@
-# Full Stack Next Strapi App!
+# Full Stack Next.JS Strapi App!
