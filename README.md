@@ -1,1 +1,1 @@
-# Full Stack Next.JS Strapi App!
+# Full Stack E-Commerce Next.JS Strapi App!

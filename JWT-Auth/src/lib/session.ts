@@ -63,6 +63,16 @@ export async function createSession(userId: string) {
 
 };
 
+export async function getSession() {
+
+    const session = cookies().get("session")?.value;
+
+    if (!session) return null;
+
+    return await decrypt(session);
+
+};
+
 export function deleteSession() {
 
     cookies().delete("session");

@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
-import { redirect } from "next/navigation";
+import { FC, useEffect, useState } from "react";
 
-const User = () => {
+const User: FC<any> = ({ session }) => {
 
     const [loading, setLoading] = useState(true);
 
@@ -48,7 +47,13 @@ const User = () => {
         );
     }
 
-    return redirect("/dashboard");
+    return (
+        <div className="flex justify-center items-center h-screen">
+            <pre className="bg-black rounded-lg p-4">
+                {JSON.stringify(session, null, 2)}
+            </pre>
+        </div>
+    );
 
 };
 
